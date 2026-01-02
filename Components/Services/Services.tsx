@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { Playfair_Display, Poppins } from "next/font/google";
 import Link from "next/link";
@@ -16,79 +16,69 @@ const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
 });
 
-const Services = () => {
+const Services = ()=> {
   return (
     <div className="py-[100px] px-4">
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-7xl w-full mx-auto">
 
-        {/* HEADER */}
-        <div className="max-w-[700px] mx-auto text-center mb-14">
-          <h2 className={`${poppins.className} text-[28px] md:text-[32px] font-bold text-black`}>
+        <div className="max-w-[700px] w-full mx-auto">
+          <h2 className={`${poppins.className} text-[32px] font-bold text-center`}>
             Our Services
           </h2>
-          <p className={`${poppins.className} text-[17px] md:text-[20px] text-gray-600 mt-2`}>
+          <p className={`${poppins.className} text-[20px] font-normal text-center`}>
             Comprehensive project management solutions tailored to your needs
           </p>
         </div>
 
-        {/* SERVICES GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              icon: <GoProjectSymlink />,
-              title: "Project Management Consultancy",
-              desc: "End-to-end project oversight ensuring timely delivery and quality standards.",
-            },
-            {
-              icon: <SiConsul />,
-              title: "Construction Management",
-              desc: "Professional supervision and coordination of construction activities.",
-            },
-            {
-              icon: <MdOutlinePeopleAlt />,
-              title: "Design Coordination",
-              desc: "Seamless integration of architectural and engineering designs.",
-            },
-            {
-              icon: <MdOutlineNaturePeople />,
-              title: "Quality & Safety Management",
-              desc: "Rigorous quality control and safety protocol implementation.",
-            },
-          ].map((service, index) => (
-            <div
-              key={index}
-              className="
-                flex flex-col gap-4 
-                p-8 
-                border border-gray-200 
-                bg-gray-50 
-                rounded-xl
-                transition-all duration-300 ease-in-out
-                hover:-translate-y-2 
-                hover:shadow-xl 
-                hover:border-gray-800
-                group
-              "
-            >
-              <div className="text-5xl text-black transition-transform duration-300 group-hover:scale-110">
-                {service.icon}
-              </div>
+        <div className="mt-[40px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-              <h3 className={`${poppins.className} text-[18px] font-semibold text-black`}>
-                {service.title}
+            {/* CARD 1 */}
+            <div className="flex flex-col gap-4 py-6 px-8 border border-gray-100 bg-gray-100
+              transition-all duration-300 hover:border-gray-800 hover:-translate-y-2 hover:shadow-lg">
+              <GoProjectSymlink className="text-6xl text-black"/>
+              <h3 className={`${poppins.className} text-[18px] font-semibold`}>
+                Project Management Consultancy
               </h3>
-
-              <p className={`${poppins.className} text-[16px] text-gray-600 leading-relaxed`}>
-                {service.desc}
-              </p>
+              <p>End-to-end project oversight ensuring timely delivery and quality standards.</p>
             </div>
-          ))}
+
+            {/* CARD 2 */}
+            <div className="flex flex-col gap-4 py-6 px-8 border border-gray-100 bg-gray-100
+              transition-all duration-300 hover:border-gray-800 hover:-translate-y-2 hover:shadow-lg">
+              <SiConsul className="text-6xl text-black"/>
+              <h3 className={`${poppins.className} text-[18px] font-semibold`}>
+                Construction Management
+              </h3>
+              <p>Professional supervision and coordination of construction activities.</p>
+            </div>
+
+            {/* CARD 3 */}
+            <div className="flex flex-col gap-4 py-6 px-8 border border-gray-100 bg-gray-100
+              transition-all duration-300 hover:border-gray-800 hover:-translate-y-2 hover:shadow-lg">
+              <MdOutlinePeopleAlt className="text-6xl text-black"/>
+              <h3 className={`${poppins.className} text-[18px] font-semibold`}>
+                Design Coordination
+              </h3>
+              <p>Seamless integration of architectural and engineering designs.</p>
+            </div>
+
+            {/* CARD 4 */}
+            <div className="flex flex-col gap-4 py-6 px-8 border border-gray-100 bg-gray-100
+              transition-all duration-300 hover:border-gray-800 hover:-translate-y-2 hover:shadow-lg">
+              <MdOutlineNaturePeople className="text-6xl text-black"/>
+              <h3 className={`${poppins.className} text-[18px] font-semibold`}>
+                Quality & Safety Management
+              </h3>
+              <p>Rigorous quality control and safety protocol implementation.</p>
+            </div>
+
+          </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-14 text-center">
+        <div className="mt-[40px] text-center">
           <Link
-            href="/services"
+            href="/about"
             className={`${poppins.className} inline-flex items-center gap-2 text-black font-medium border-b-2 border-black pb-1 hover:gap-3 transition-all`}
           >
             View All Services →
