@@ -3,6 +3,8 @@ import Banner from "../Components/Banner/Banner";
 import About from '../Components/About/About'
 import Services from "../Components/Services/Services";
 import Feature from "../Components/Feature/Feature";
+import Choose from '../Components/Choose/Choose';
+
 
 export default function Home() {
   return (
@@ -11,6 +13,7 @@ export default function Home() {
         <About></About>
         <Services></Services>
         <Feature></Feature>
+        <Choose></Choose>
 
     </div>
   );
