@@ -18,7 +18,7 @@ const Choose = () => {
 
         {/* HEADER */}
         <div className="max-w-[700px] mx-auto text-center mb-14">
-          <h2 className={`${poppins.className} text-[30px] md:text-[38px] font-bold text-white`}>
+          <h2 className={`${playFair.className} text-[30px] md:text-[38px] font-bold text-white`}>
             Why Choose CapX Properties
           </h2>
           <p className={`${poppins.className} text-[17px] md:text-[20px] text-gray-300 mt-3`}>

@@ -5,117 +5,130 @@ import Link from "next/link";
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700']
-})
+});
 
 const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-white shadow">
-      <div className="max-w-7xl w-full mx-auto px-4">
-        <div className="navbar h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
 
-          {/* Navbar Start */}
-          <div className="navbar-start flex items-center">
-            {/* Mobile Dropdown */}
+          {/* LEFT */}
+          <div className="flex items-center gap-4">
+
+            {/* MOBILE MENU */}
             <div className="dropdown lg:hidden">
-              <div tabIndex={0} role="button" className="btn btn-ghost">
+              <div tabIndex={0} role="button" className="btn btn-ghost px-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                 </svg>
               </div>
-              <ul tabIndex="-1" className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
-                <li><Link href={'/'}>Home</Link></li>
+
+              <ul className="menu menu-sm dropdown-content mt-3 w-56 bg-white rounded-box shadow z-50">
+                <li><Link href="/">Home</Link></li>
                 <li>
-                  <Link href={'/about'}>About Us</Link>
-                  <ul className="p-2 bg-white rounded shadow mt-1">
-                    <li><Link href={'/about#who-we-are'}>Who We Are</Link></li>
-                    <li><Link href={'/about#mission-vision'}>Mission & Vision</Link></li>
-                    <li><Link href={'/projects#our-team'}>Our Team</Link></li>
-                    <li><Link href={'/projects#core-values'}>Core Values</Link></li>
-                  </ul>
+                  <details>
+                    <summary>About Us</summary>
+                    <ul>
+                      <li><Link href="/about#who-we-are">Who We Are</Link></li>
+                      <li><Link href="/about#mission-vision">Mission & Vision</Link></li>
+                      <li><Link href="/about#our-team">Our Team</Link></li>
+                      <li><Link href="/about#core-values">Core Values</Link></li>
+                    </ul>
+                  </details>
                 </li>
+                <li><Link href="/services">Services</Link></li>
                 <li>
-                  <Link href={'/projects'}>Projects</Link>
-                  <ul className="p-2 bg-white rounded shadow mt-1">
-                    <li><Link href={'/projects#our-team'}>Our Team</Link></li>
-                    <li><Link href={'/projects#core-values'}>Core Values</Link></li>
-                    <li><Link href={'/projects#our-team'}>Our Team</Link></li>
-                    <li><Link href={'/projects#core-values'}>Core Values</Link></li>
-                  </ul>
+                  <details>
+                    <summary>Projects</summary>
+                    <ul>
+                      <li><Link href="/projects#our-team">Our Team</Link></li>
+                      <li><Link href="/projects#core-values">Core Values</Link></li>
+                    </ul>
+                  </details>
                 </li>
+                <li><Link href="/career">Career</Link></li>
+                <li><Link href="/vendor">Vendor</Link></li>
+                <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
 
-            {/* Logo */}
-            <Link href={'/'} className="btn btn-ghost text-xl font-bold">
-              Real Estate
+            {/* LOGO */}
+            <Link href="/" className="flex items-center">
+              <img
+                src="https://i.ibb.co.com/Y4NyM08r/43f0b6a1-f237-4135-a70c-0f7e8b40ca59.jpg"
+                alt="Logo"
+                className="h-12 w-[120px] "
+              />
             </Link>
           </div>
 
-          {/* Navbar Center */}
-          <div className="navbar-center hidden lg:flex items-center">
-            <ul className="menu menu-horizontal px-1 space-x-4">
+          {/* DESKTOP MENU */}
+          <div className="hidden lg:flex items-center gap-8">
+            <ul className="flex items-center gap-6">
 
               <li>
-                <Link href={'/'} className={`${poppins.className} text-[17px] font-medium text-gray-600 hover:text-black transition`}>
+                <Link className={`${poppins.className} text-[17px] text-gray-600 hover:text-black`} href="/">
                   Home
                 </Link>
               </li>
 
-              {/* About Dropdown */}
+              {/* ABOUT */}
               <li className="relative group">
-                <Link href={'/about'} className={`${poppins.className} text-[17px] font-medium text-gray-600 hover:text-black transition`}>
+                <Link className={`${poppins.className} text-[17px] text-gray-600 hover:text-black`} href="/about">
                   About Us
                 </Link>
-                <ul className="absolute hidden group-hover:block bg-white shadow rounded mt-8 w-48">
-                  <li><Link href={'/about#who-we-are'} className="block px-4 py-2 hover:bg-gray-100">Who We Are</Link></li>
-                  <li><Link href={'/about#mission-vision'} className="block px-4 py-2 hover:bg-gray-100">Mission & Vision</Link></li>
-                  <li><Link href={'/projects#our-team'}>Our Team</Link></li>
-                    <li><Link href={'/projects#core-values'}>Core Values</Link></li>
+                <ul className="absolute top-full left-0 mt-4 w-52 bg-white shadow rounded-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
+                  <li><Link className="block px-4 py-2 hover:bg-gray-100" href="/about#who-we-are">Who We Are</Link></li>
+                  <li><Link className="block px-4 py-2 hover:bg-gray-100" href="/about#mission-vision">Mission & Vision</Link></li>
+                  <li><Link className="block px-4 py-2 hover:bg-gray-100" href="/about#our-team">Our Team</Link></li>
+                  <li><Link className="block px-4 py-2 hover:bg-gray-100" href="/about#core-values">Core Values</Link></li>
                 </ul>
               </li>
 
               <li>
-                <Link href={'/services'} className={`${poppins.className} text-[17px] font-medium text-gray-600 hover:text-black transition`}>
+                <Link className={`${poppins.className} text-[17px] text-gray-600 hover:text-black`} href="/services">
                   Services
                 </Link>
               </li>
 
-              {/* Projects Dropdown */}
+              {/* PROJECTS */}
               <li className="relative group">
-                <Link href={'/projects'} className={`${poppins.className} text-[17px] font-medium text-gray-600 hover:text-black transition`}>
+                <Link className={`${poppins.className} text-[17px] text-gray-600 hover:text-black`} href="/projects">
                   Projects
                 </Link>
-                <ul className="absolute hidden group-hover:block bg-white shadow rounded mt-8 w-48">
-                  <li><Link href={'/projects#our-team'} className="block px-4 py-2 hover:bg-gray-100">Our Team</Link></li>
-                  <li><Link href={'/projects#core-values'} className="block px-4 py-2 hover:bg-gray-100">Core Values</Link></li>
+                <ul className="absolute top-full left-0 mt-4 w-48 bg-white shadow rounded-md opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
+                  <li><Link className="block px-4 py-2 hover:bg-gray-100" href="/projects#our-team">Our Team</Link></li>
+                  <li><Link className="block px-4 py-2 hover:bg-gray-100" href="/projects#core-values">Core Values</Link></li>
                 </ul>
               </li>
 
               <li>
-                <Link href={'/career'} className={`${poppins.className} text-[17px] font-medium text-gray-600 hover:text-black transition`}>
+                <Link className={`${poppins.className} text-[17px] text-gray-600 hover:text-black`} href="/career">
                   Career
                 </Link>
               </li>
 
               <li>
-                <Link href={'/vendor'} className={`${poppins.className} text-[17px] font-medium text-gray-600 hover:text-black transition`}>
+                <Link className={`${poppins.className} text-[17px] text-gray-600 hover:text-black`} href="/vendor">
                   Vendor
                 </Link>
               </li>
-
             </ul>
 
-            {/* Contact Button */}
-            <Link href={'/contact'} className={`${poppins.className} text-[18px] py-2 rounded-lg px-4 bg-black text-white hover:bg-gray-800 transition`}>
+            {/* CTA */}
+            <Link
+              href="/contact"
+              className={`${poppins.className} text-[16px] px-4 py-2 rounded-lg bg-black text-white hover:bg-gray-800 transition`}
+            >
               Contact Us
             </Link>
-
           </div>
 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Navbar;

@@ -4,6 +4,7 @@ import About from '../Components/About/About'
 import Services from "../Components/Services/Services";
 import Feature from "../Components/Feature/Feature";
 import Choose from '../Components/Choose/Choose';
+import ContactBtn from '../Components/ContactBtn/ContactBtn'
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <Services></Services>
         <Feature></Feature>
         <Choose></Choose>
+        <ContactBtn></ContactBtn>
 
     </div>
   );

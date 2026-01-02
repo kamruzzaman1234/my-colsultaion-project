@@ -22,10 +22,10 @@ const Services = ()=> {
       <div className="max-w-7xl w-full mx-auto">
 
         <div className="max-w-[700px] w-full mx-auto">
-          <h2 className={`${poppins.className} text-[32px] font-bold text-center`}>
+          <h2 className={`${playFair.className} text-[32px] font-bold text-center`}>
             Our Services
           </h2>
-          <p className={`${poppins.className} text-[20px] font-normal text-center`}>
+          <p className={`${poppins.className} text-[18px] font-normal text-center`}>
             Comprehensive project management solutions tailored to your needs
           </p>
         </div>
