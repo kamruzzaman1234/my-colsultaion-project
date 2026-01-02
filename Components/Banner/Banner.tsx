@@ -1,11 +1,11 @@
 'use client';
-import { Playfair, Poppins } from "next/font/google";
+import { Playfair, Playfair_Display, Poppins } from "next/font/google";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const playFair = Playfair({
+const playFair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700']
+  weight: ['400', '500', '600', '700']
 });
 
 const poppins = Poppins({
@@ -33,7 +33,7 @@ const Banner = () => {
         <div className="flex flex-col items-center gap-6 text-center px-4">
 
           <h1
-            className={`${playFair.className} tracking-tight text-[90px] leading-tight font-bold`}
+            className={`${playFair.className} tracking-tight text-[80px] lg:text-[90px] leading-tight font-bold`}
           >
             Excellence in Project Management
           </h1>
