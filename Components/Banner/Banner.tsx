@@ -30,7 +30,7 @@ const Banner = () => {
 
       {/* Content */}
       <div className="relative max-w-7xl mx-auto w-full text-white pt-[260px] pb-[260px] px-4">
-        <div className="flex flex-col items-center gap-6 text-center">
+        <div className="flex flex-col items-center gap-6 text-center px-4">
 
           <h1
             className={`${playFair.className} tracking-tight text-[90px] leading-tight font-bold`}
